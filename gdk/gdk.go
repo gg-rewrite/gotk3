@@ -1406,7 +1406,10 @@ func (v *EventTouch) Type() EventType {
 	return EventType(c)
 }
 
-/*TODO GdkWindow *window */
+func  (v *EventTouch) Window() Window {
+	c := v.native().window
+	return Window(c)
+}
 
 func (v *EventTouch) Time() uint32 {
 	c := v.native().time
@@ -1437,7 +1440,10 @@ func (v *EventTouch) EmulatingPointer() uint {
 	return uint(c)
 }
 
-/*TODO GdkDevice *device */
+func (v *EventTouch) Device() Device {
+	c := v.native().device
+	return Device(c)
+}
 
 func (v *EventTouch) XRoot() float64 {
 	c := v.native().x_root
